@@ -1,0 +1,6 @@
+module esRawToDigi = ESRawToDigi {
+   string Label = "source"
+   string InstanceES = ""
+   string ESdigiCollection = ""
+   untracked bool debugMode = false
+}
