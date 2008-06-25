@@ -1,0 +1,5 @@
+module esRawToDigi = ESRawToDigi {
+   InputTag sourceTag = source
+   string ESdigiCollection = ""
+   untracked bool debugMode = false
+}

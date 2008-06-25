@@ -22,8 +22,7 @@ class ESRawToDigi : public EDProducer {
   
  private:
 
-  string label_;
-  string instanceName_;
+  edm::InputTag sourceTag_;
   string ESdigiCollection_;
 
   bool debug_;
