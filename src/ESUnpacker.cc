@@ -12,7 +12,7 @@ ESUnpacker::ESUnpacker(const ParameterSet& ps)
 {
 
   debug_ = pset_.getUntrackedParameter<bool>("debugMode", false);
-  lookup_ = ps.getUntrackedParameter<FileInPath>("LookupTable");
+  lookup_ = ps.getParameter<FileInPath>("LookupTable");
 
   m1  = ~(~Word64(0) << 1);
   m2  = ~(~Word64(0) << 2);
@@ -174,7 +174,8 @@ void ESUnpacker::interpretRawData(int fedId, const FEDRawData & rawData, ESRawDa
     }
   }
   if (vmajor_ < 4) {
-    edm::LogWarning("Invalid Data")<<"Invalid ES data format : "<<vmajor_<<" "<<vminor_;
+    if (debug_) 
+      edm::LogWarning("Invalid Data")<<"Invalid ES data format : "<<vmajor_<<" "<<vminor_;
     return;
   }
   if (dccHeaderCount != 6) {
