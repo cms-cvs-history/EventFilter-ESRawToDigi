@@ -1,6 +1,0 @@
-module esRawToDigi = ESRawToDigi {
-    InputTag sourceTag = source
-    string ESdigiCollection = ""
-    untracked bool debugMode = false
-    untracked FileInPath LookupTable = "EventFilter/ESDigiToRaw/data/ES_lookup_table.dat"
-}
